@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在数据中理解世界杯 · 简洁笔记</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background-color: #f7f5f0;
+            color: #1e2a36;
+            line-height: 1.75;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #16222a 0%, #1b2c3a 100%);
+            padding: 3.8rem 2rem 3.2rem;
+            text-align: center;
+            color: #eae9e2;
+            border-bottom: 1px solid #3a4b56;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 350;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.9rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #bcc5cb;
+            max-width: 560px;
+            margin: 0 auto;
+            border-top: 1px solid #3b4f5c;
+            padding-top: 1.2rem;
+        }
+
+        .wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2.8rem 1.8rem 4rem;
+        }
+
+        .article-title {
+            font-size: 1.7rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #1e2a36;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+
+        .meta {
+            color: #6f7b84;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border-left: 3px solid #d3b88a;
+            padding-left: 1rem;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            color: #3b4a54;
+            margin-bottom: 2.2rem;
+            font-weight: 350;
+        }
+
+        .body-text p {
+            margin-bottom: 1.6rem;
+            font-size: 1rem;
+            color: #25333e;
+        }
+
+        .body-text p:last-child {
+            margin-bottom: 2.4rem;
+        }
+
+        .pull-quote {
+            background: #edebe3;
+            border-left: 4px solid #c7a467;
+            padding: 1.1rem 1.6rem;
+            margin: 2rem 0 2.2rem;
+            font-style: normal;
+            color: #31505f;
+            font-size: 0.98rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .pull-quote::before {
+            content: "📌 ";
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .highlight-link {
+            color: #b07d44;
+            text-decoration: underline;
+            text-underline-offset: 0.18em;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #d9b68a;
+            transition: color 0.2s, text-decoration-color 0.2s;
+            font-weight: 400;
+        }
+
+        .highlight-link:hover {
+            color: #8a5f2e;
+            text-decoration-color: #8a5f2e;
+        }
+
+        .faq-mini {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #d9d4ca;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #2c3e4a;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #394e5c;
+            margin-bottom: 0.25rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-item span {
+            color: #4c5e6a;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 3.2rem;
+            font-size: 0.85rem;
+            color: #7c8b93;
+            text-align: right;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 2.8rem 1.2rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .wrap {
+                padding: 1.8rem 1.2rem 2.8rem;
+            }
+            .article-title {
+                font-size: 1.4rem;
+            }
+            .pull-quote {
+                padding: 0.9rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .article-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>不仅仅是赛程</h1>
+        <div class="sub">从一次查询开始，慢慢靠近那四年一度的喧响</div>
+    </header>
+
+    <main class="wrap">
+        <h2 class="article-title">对照、延伸与日常里的世界杯</h2>
+        <div class="meta">读与记 · 一种安静的跟随方式</div>
+
+        <div class="body-text">
+            <p>
+                每个大赛周期，我们总习惯打开几个网站：查时差、看积分、翻历史交手记录。但页面看多了会发现，大部分信息流太急，缺少一种让人可以慢慢对照的空间。最近我常去一个地方，把历届数据、分组和淘汰赛脉络摊开，像翻一本旧手册——那个地方就是<a href="https://go-fifa-wc.com" class="highlight-link">世界杯</a>。它不推消息，只安静陈列事实。
+            </p>
+
+            <p>
+                某个下午，我为了确认 1986 年墨西哥的淘汰赛对阵，点开了多个平台，最后反而在这个没有弹窗和推送的页面上找到了最清晰的表格。它不会催促你“立即查看”，也没有夸张的标题，只有年份、比分、进球者和注释。这种克制在如今有点稀缺。
+            </p>
+
+            <div class="pull-quote">
+                如果你只是想确认某届比赛的八强分布，或者回忆一场经典比赛的阵容，这里可能比搜索引擎更直接。
+            </div>
+
+            <p>
+                后来我开始把它用作延伸阅读的起点。比如看到某一年的冷门赛果，就会顺手去查那支球队当时的阵容、主帅和预选赛历程。这些信息往往藏在同一个站内，不需要跳转到十几个标签页。对于写稿、做播客笔记或者纯粹的好奇心来说，这种连贯感很舒服。
+            </p>
+
+            <p>
+                我还留意到它的一个细节：每个小组页面下方都附有简短注释，说明当时的扩军背景或赛制变化。比如 1998 年改成 32 队，2018 年引入 VAR——这些节点在赛程表旁边出现，不突兀，但能让人多停留几秒。对普通爱好者而言，这正是日常查询时想要的那种“附加价值”。
+            </p>
+        </div>
+
+        <div class="faq-mini">
+            <h3>几个常被问到的 · 简记</h3>
+            <div class="faq-item">
+                <strong>有哪些年份的资料比较全？</strong>
+                <span>从 1930 年到最近一届，小组赛、淘汰赛、射手和场均进球基本都有。早期几届因为数据保存问题，部分比赛缺少阵容细节，但赛果完整。</span>
+            </div>
+            <div class="faq-item">
+                <strong>适合用来做赛程笔记吗？</strong>
+                <span>适合。它的页面结构扁平，方便复制粘贴时间线和分组，也适合截图做个人对照表。没有杂乱的广告干扰排版。</span>
+            </div>
+            <div class="faq-item">
+                <strong>移动端阅读体验如何？</strong>
+                <span>表格会自动适应窄屏，文字大小适中，横屏时能直接看整列数据。不需要双指缩放。</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            —— 记录于一次平常的查询午后
+        </div>
+    </main>
+</body>
+</html>
